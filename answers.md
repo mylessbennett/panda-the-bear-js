@@ -1,3 +1,5 @@
+PART 1
+
 1.
 let profileImage = document.querySelector('.profile-image');
 profileImage.src = "https://placebear.com/400/400";
@@ -53,9 +55,51 @@ document.querySelector('#submit').value = "En garde!";
 document.querySelector('#submit').disabled = true;
 ----------------------------------------------------------------------------
 15.
-bio_info = document.querySelectorAll('.bio-info-item');
-bio_info_list = document.querySelector('.bio-info');
-for (let i = 0; i < bio_info.length; i++) {
-  bio_info_list.removeChild(bio_info[i]);
+bioInfo = document.querySelectorAll('.bio-info-item');
+bioInfoList = document.querySelector('.bio-info');
+for (let i = 0; i < bioInfo.length; i++) {
+  bioInfoList.removeChild(bioInfo[i]);
 };
 ----------------------------------------------------------------------------
+
+PART 2
+----------------------------------------------------------------------------
+Removing Elements from the DOM
+1.
+let timeTravel = document.querySelector('div.bar-default > #time-travel');
+parent = timeTravel.parentNode
+parent.removeChild(timeTravel);
+----------------------------------------------------------------------------
+Adding Elements to the DOM
+1.
+let pikachu = document.querySelector('div#right-image.portfolio-image img');
+let pikachu2 = pikachu.cloneNode(true);
+let portfolioContainer = document.querySelector('.portfolio-container');
+portfolioContainer.appendChild(pikachu2);
+----------------------------------------------------------------------------
+2.
+for (let i = 0; i <=10; i++) {
+    pikachu2 = pikachu.cloneNode(true);
+    portfolioContainer.appendChild(pikachu2);
+};
+----------------------------------------------------------------------------
+3.
+const lisItem = document.createElement('li');
+const listItem = document.createElement('li');
+const leftSpan = document.createElement('span');
+var lastUpdated = document.createTextNode('Page last updated on');
+leftSpan.appendChild(lastUpdated);
+var date = new Date()
+date = document.createTextNode(date);
+const rightSpan = document.createElement('span');
+rightSpan.appendChild(date);
+listItem.appendChild(rightSpan);
+document.querySelector('ul.bio-info').appendChild(listItem);
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+
